@@ -12,7 +12,7 @@
     --bg-card: #FFFFFF;          /* Branco puro para cards/polaroids */
     --bg-panel: #EAE8E1;         /* Cinza claro para áreas de apoio */
     
-    --brand-blue: #00A3FF;       /* Azul elétrico vibrante do cabeçalho e páginas 1, 3, 8, 9 */
+    --brand-blue: #005AD5;       /* Azul elétrico ajustado para contraste (Acessibilidade) */
     --brand-purple: #C3B1E1;     /* Lilás/Lavanda das pílulas e rótulos páginas 4, 6, 8 */
     --brand-dark-purple: #8C52FF;/* Roxo forte da página 11 */
     --brand-black: #111111;      /* Preto profundo para tipografia e setas */
