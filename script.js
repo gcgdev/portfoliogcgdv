@@ -215,10 +215,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     const viewer = document.getElementById("epub-viewer");
                     if (viewer) viewer.innerHTML = ""; // Limpa iframes anteriores
+                    
+                    // Trava o tamanho em pixels para impedir o epub.js de vazar o layout
+                    const vWidth = viewer.clientWidth || 250;
+                    const vHeight = viewer.clientHeight || 350;
 
                     const rendition = book.renderTo("epub-viewer", {
-                        width: "100%",
-                        height: "100%",
+                        width: vWidth,
+                        height: vHeight,
                         spread: "none",
                         flow: "paginated"
                     });
@@ -250,7 +254,12 @@ document.addEventListener('DOMContentLoaded', () => {
             // Ajustar layout no redimensionamento da janela (Responsividade)
             window.addEventListener('resize', () => {
                 if (currentRendition) {
-                    currentRendition.resize();
+                    const viewer = document.getElementById("epub-viewer");
+                    if (viewer) {
+                        currentRendition.resize(viewer.clientWidth, viewer.clientHeight);
+                    } else {
+                        currentRendition.resize();
+                    }
                 }
             });
         } else {
