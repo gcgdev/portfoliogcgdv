@@ -73,6 +73,12 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
     line-height: 1.6;
+    width: 100%;
+    max-width: 100vw;
+}
+
+img, picture, video, canvas, svg, iframe {
+    max-width: 100%;
 }
 
 a {
@@ -638,7 +644,13 @@ ul {
     display: block;
     padding: 4rem 0;
     background-color: var(--bg-main);
-    transition: transform 0.3s ease;
+}
+
+.contact-box > *,
+.blue-panel-grid > *,
+.calegari-panel-grid > * {
+    min-width: 0;
+    max-width: 100%;
 }
 
 .calegari-web-section:hover {
@@ -746,7 +758,8 @@ ul {
 .blue-panel-header {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
+    width: 100%;
     gap: 1rem;
     margin-bottom: 1.5rem;
 }
@@ -769,6 +782,7 @@ ul {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
     gap: 1.5rem;
+    width: 100%;
 }
 
 .highlight-item {
