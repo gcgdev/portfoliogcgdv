@@ -767,7 +767,7 @@ ul {
 
 .epub-highlights-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
     gap: 1.5rem;
 }
 
@@ -1005,10 +1005,14 @@ select option {
         text-align: center;
         padding: 0.8rem;
         word-break: break-word;
+        max-width: 100%;
+        white-space: normal;
     }
 
     .blue-panel, .calegari-panel, .contact-box {
-        padding: 2rem 1.2rem;
+        padding: 1.5rem 1rem;
+        max-width: 100%;
+        overflow-wrap: break-word;
     }
 
     .container {
@@ -1047,6 +1051,7 @@ select option {
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
     width: 100%;
     max-width: 380px;
+    min-width: 0;
     display: flex;
     flex-direction: column;
     position: relative;
