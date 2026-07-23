@@ -1119,6 +1119,8 @@ select option {
     display: flex;
     align-items: center;
     justify-content: center;
+    min-width: 0;
+    width: 100%;
 }
 
 [data-theme="dark"] .tablet-screen {
@@ -1164,12 +1166,21 @@ select option {
     height: 100%;
     padding: 1rem;
     background: #FAF9F6; /* Fundo suave estilo papel de leitura */
+    min-width: 0;
+    overflow: hidden;
+}
+
+.reader-viewer > div {
+    max-width: 100% !important;
+    min-width: 0 !important;
 }
 
 .reader-viewer iframe {
     border: none !important;
     width: 100% !important;
     height: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
 }
 
 .tablet-controls {
