@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags Avançadas -->
+    <title>Gabriel C. Gonçalves | Especialista em Web Design, UI/UX & Design Têxtil</title>
+    <meta name="description" content="Portfólio de Gabriel C. Gonçalves, Desenvolvedor Front-end, Especialista UI/UX e Designer Gráfico Premium. Soluções de alta conversão, e-commerces, estampas exclusivas e diagramação.">
+    <meta name="keywords" content="Desenvolvedor Front-end, Web Designer, Especialista UI UX, Designer Gráfico, Criação de Sites, E-commerce, Landing Pages, Design Têxtil, Gabriel C. Gonçalves, gcgdev, Diagramação ePub">
+    <meta name="author" content="Gabriel C. Gonçalves">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://www.gcgdev.com.br/">
+
+    <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.gcgdev.com.br/">
+    <meta property="og:title" content="Gabriel C. Gonçalves | Portfólio Criativo e Desenvolvimento Web">
+    <meta property="og:description" content="Especialista em Web Design de alta conversão, UI/UX e Design Gráfico. Conheça as soluções que vão elevar a sua marca.">
+    <meta property="og:image" content="https://www.gcgdev.com.br/images/Eu.png">
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.gcgdev.com.br/">
+    <meta name="twitter:title" content="Gabriel C. Gonçalves | Portfólio Criativo e Desenvolvimento Web">
+    <meta name="twitter:description" content="Especialista em Web Design de alta conversão, UI/UX e Design Gráfico. Conheça as soluções que vão elevar a sua marca.">
+    <meta name="twitter:image" content="https://www.gcgdev.com.br/images/Eu.png">
+
+    <!-- Schema.org JSON-LD (Rich Snippets do Google) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Gabriel C. Gonçalves",
+      "jobTitle": "Engenheiro Front-end & Designer de UI/UX",
+      "url": "https://www.gcgdev.com.br/",
+      "image": "https://www.gcgdev.com.br/images/Eu.png",
+      "sameAs": [
+        "https://www.linkedin.com/in/gabriel-c-gon%C3%A7alves-988458110/",
+        "https://github.com/GcgDev",
+        "https://www.behance.net/gabrielgonz"
+      ],
+      "knowsAbout": ["Desenvolvimento Web", "Web Design", "UI/UX", "Design Gráfico", "Design Têxtil", "Diagramação ePub", "Front-end"]
+    }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- JSZip (Requisito para descompactar o ePub) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <!-- ePub.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/epubjs/dist/epub.min.js"></script>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Decorative Wave Accent -->
+    <div class="top-brand-banner" aria-hidden="true"></div>
+
+    <!-- Header Navigation -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#hero" class="brand-logo" aria-label="Gabriel C. Gonçalves">
+                <span class="logo-name">GABRIEL C.</span>
+                <span class="logo-subtitle">DESIGNER GRÁFICO</span>
+            </a>
+
+            <nav class="nav-menu" id="nav-menu" aria-label="Navegação Principal">
+                <ul class="nav-list">
+                    <li><a href="#sobre" class="nav-link">Quem sou eu</a></li>
+                    <li><a href="#competencias" class="nav-link">Competências</a></li>
+                    <li><a href="#servicos" class="nav-link">Serviços</a></li>
+                    <li><a href="#portfolio" class="nav-link">Portfólio</a></li>
+                    <li><a href="#cases" class="nav-link">Cases</a></li>
+                    <li><a href="#epub" class="nav-link">eBooks / ePub</a></li>
+                    <li><a href="#faq" class="nav-link">FAQ</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Alternar modo claro/escuro" title="Alternar Modo">
+                    <i data-lucide="sun" class="sun-icon"></i>
+                    <i data-lucide="moon" class="moon-icon"></i>
+                </button>
+
+                <a href="#contato" class="btn btn-pill btn-black">
+                    <span>Fale Comigo</span>
+                    <span class="arrow-icon">↗</span>
+                </a>
+
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menu mobile" aria-expanded="false">
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="container hero-container grid-2-col align-end">
+                <div class="hero-text-content">
+                    <div class="hero-header-badge">
+                        <span class="pill-badge pill-purple">ESTAMPAS E DESIGN</span>
+                        <span class="arrow-big">↗</span>
+                    </div>
+
+                    <h1 class="hero-title">
+                        PORTFÓLIO <br>
+                        <span class="hero-title-outlined">GABRIEL C.</span>
+                    </h1>
+
+                    <p class="hero-tagline">
+                        Designer gráfico especializado em <strong>Estampas Exclusivas</strong>, <strong>Branding</strong>, <strong>Web Design</strong> e <strong>Diagramação de eBooks em ePub (Sigil/HTML/CSS)</strong>.
+                    </p>
+
+                    <div class="hero-cta-group">
+                        <a href="#contato" class="btn btn-pill btn-blue btn-lg">
+                            <span>Vamos Trabalhar Juntos?</span>
+                            <span class="arrow-icon">↘</span>
+                        </a>
+                        <a href="#portfolio" class="btn btn-pill btn-outline btn-lg">
+                            <span>Ver Projetos</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-image-content">
+                    <img src="images/Eu.png" alt="Gabriel C. Gonçalves" class="hero-photo" loading="eager">
+                </div>
+            </div>
+        </section>
+
+        <!-- Marquee Animada -->
+        <div class="marquee-container">
+            <div class="marquee-content">
+                <span>SOCIAL MEDIA • DESIGN TÊXTIL • DIAGRAMAÇÃO • BRANDING • HTML, CSS • </span>
+                <span>SOCIAL MEDIA • DESIGN TÊXTIL • DIAGRAMAÇÃO • BRANDING • HTML, CSS • </span>
+                <span>SOCIAL MEDIA • DESIGN TÊXTIL • DIAGRAMAÇÃO • BRANDING • HTML, CSS • </span>
+                <span>SOCIAL MEDIA • DESIGN TÊXTIL • DIAGRAMAÇÃO • BRANDING • HTML, CSS • </span>
+            </div>
+        </div>
+
+        <!-- Quem Sou Eu / Bio -->
+        <section class="bio-section" id="sobre">
+            <div class="container">
+                <div class="sobre-text-card">
+                    <div class="section-arrow">↘</div>
+                    <h2 class="section-hero-heading" style="margin-bottom: 1.5rem;">QUEM SOU EU?</h2>
+                    <p class="lead-text">
+                        Prazer, me chamo <strong>Gabriel C. Gonçalves</strong>, sou designer gráfico especializado em estampas exclusivas, branding e web design, com mais de <strong>4 anos de experiência</strong>.
+                    </p>
+                    <p>
+                        Meu trabalho é voltado para a criação técnica e detalhada, com base em briefings claros. Tenho perfil de execução e foco em soluções práticas para moda, confecção, e-commerce, marcas e publicações digitais. Tenho vasta experiência com artes religiosas, streetwear e sistemas web.
+                    </p>
+
+                    <div class="experience-chips">
+                        <div class="chip">
+                            <strong>Calegari Malhas</strong>
+                            <span>2022 - 2026</span>
+                        </div>
+                        <div class="chip">
+                            <strong>Shein X</strong>
+                            <span>2023 - 2024</span>
+                        </div>
+                        <div class="chip">
+                            <strong>Autônomo / Freelance</strong>
+                            <span>2019 - 2026</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Áreas de Experiência / Serviços -->
+        <section class="servicos-section" id="servicos">
+            <div class="container">
+                <div class="section-title-wrap text-center">
+                    <span class="pill-badge pill-purple">EXPERIÊNCIA</span>
+                    <h2 class="main-heading">Soluções &amp; Serviços</h2>
+                </div>
+
+                <div class="services-grid">
+                    <!-- 01. Web Design -->
+                    <div class="service-block">
+                        <div class="service-number">01.</div>
+                        <h3>WEB DESIGN &amp; E-COMMERCE</h3>
+                        <p>Projetei sites e perfis online para clientes em setores como moda, indústria têxtil, artes, cultura, entretenimento e varejo. Destaque para o desenvolvimento do <strong>Configurador de Uniformes Interativo em 3 Passos</strong> para a Calegari Malhas.</p>
+                    </div>
+
+                    <!-- 02. Identidade de Marca -->
+                    <div class="service-block">
+                        <div class="service-number">02.</div>
+                        <h3>IDENTIDADE DE MARCA &amp; BRANDING</h3>
+                        <p>Estratégia de marca, criação de logotipos autênticos, manuais visuais, paletas cromáticas e aplicações comerciais que fortalecem o valor percebido do negócio.</p>
+                    </div>
+
+                    <!-- 03. Estamparia Exclusiva -->
+                    <div class="service-block">
+                        <div class="service-number">03.</div>
+                        <h3>ESTAMPARIA EXCLUSIVA &amp; VESTUÁRIO</h3>
+                        <p>Desenvolvimento técnico de estampas religiosas, streetwear, geek/anime e padronagens. Arquivos em altíssima resolução com separação de cores perfeita para sublimação, DTF e serigrafia. Experiência internacional com Shein X.</p>
+                    </div>
+
+                    <!-- 04. Diagramação de eBooks com Sigil -->
+                    <div class="service-block highlight-service">
+                        <div class="service-number">04.</div>
+                        <h3>DIAGRAMAÇÃO DE EBOOKS (SIGIL / ePUB)</h3>
+                        <p>Especialista em diagramação limpa de livros digitais no <strong>Sigil Editor</strong>. Construção nativa em <strong>HTML5 semântico, CSS3 para e-readers</strong> (Kindle, Apple Books) e scripts JS para ePub3 interativos. 100% aprovado no ePubCheck.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Showroom / Portfólio (Estampas em Carrossel) -->
+        <section class="portfolio-section" id="portfolio">
+            <div class="container">
+                <div class="section-title-wrap text-center">
+                    <span class="pill-badge pill-blue">PORTFÓLIO</span>
+                    <h2 class="main-heading">Estampas Selecionadas</h2>
+                    <p style="margin-top: 0.5rem; color: var(--brand-text-muted); font-size: 0.9rem;">(Deslize para o lado para ver mais)</p>
+                </div>
+
+                <!-- Portfolio Carousel com Botões -->
+                <div class="carousel-wrapper">
+                    <button class="carousel-btn prev-btn" id="btn-prev" aria-label="Anterior"><i data-lucide="chevron-left"></i></button>
+                    
+                    <div class="portfolio-carousel" id="estampas-carousel">
+                        <img src="images/calegari1.png" alt="Estampa Religiosa Calegari 1" class="carousel-img" loading="lazy">
+                        <img src="images/calegari2.png" alt="Estampa Religiosa Calegari 2" class="carousel-img" loading="lazy">
+                        <img src="images/calegari3.png" alt="Estampa Religiosa Calegari 3" class="carousel-img" loading="lazy">
+                        <img src="images/calegari4.png" alt="Estampa Religiosa Calegari 4" class="carousel-img" loading="lazy">
+                        <img src="images/calegari5.png" alt="Estampa Religiosa Calegari 5" class="carousel-img" loading="lazy">
+                        <img src="images/calegari6.png" alt="Estampa Religiosa Calegari 6" class="carousel-img" loading="lazy">
+                    </div>
+                    
+                    <button class="carousel-btn next-btn" id="btn-next" aria-label="Próximo"><i data-lucide="chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nova Seção Calegari Malhas (Web Design) -->
+        <a href="https://gcgdev.github.io/calegari_malhas/" target="_blank" rel="noopener" class="calegari-web-section" id="web-design">
+            <div class="container">
+                <div class="calegari-panel">
+                    <div class="calegari-panel-grid">
+                        <div class="calegari-info">
+                            <div class="calegari-header">
+                                <span class="pill-badge pill-purple">WEB DESIGN &amp; E-COMMERCE</span>
+                                <h2>CALEGARI MALHAS</h2>
+                            </div>
+                            <p class="calegari-desc">
+                                Plataforma de e-commerce e <strong>Configurador de Uniformes Interativo</strong> que programei do zero. Solução digital voltada para automação de orçamentos, seleção de tecidos e upload de estampas.
+                            </p>
+                            
+                            <div class="calegari-highlights">
+                                <span class="btn btn-pill btn-black" style="pointer-events: none;">Acessar Site Interativo ↗</span>
+                            </div>
+                        </div>
+                        <div class="calegari-visual">
+                            <div class="calegari-mock-browser">
+                                <div class="browser-top">
+                                    <i></i><i></i><i></i>
+                                </div>
+                                <div class="browser-body">
+                                    <!-- Apenas um preview decorativo já que a imagem "calegari1" não é de site -->
+                                    <h3 style="font-family: var(--font-heading); color: var(--brand-black); font-size: 2rem;">CALEGARI</h3>
+                                    <p style="color: var(--brand-text-muted);">E-commerce e Configurador Têxtil</p>
+                                    <div style="margin-top: 1rem; width: 60px; height: 4px; background: var(--brand-blue); border-radius: 2px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <!-- Destaque Diagramação Sigil ePub -->
+        <section class="epub-feature-section" id="epub">
+            <div class="container">
+                <div class="blue-panel">
+                    <div class="blue-panel-grid">
+                        <div class="blue-panel-info">
+                            <div class="blue-panel-header">
+                                <span class="pill-badge pill-white">ESPECIALIDADE EDITORIAL</span>
+                                <h2>DIAGRAMAÇÃO DE EBOOKS EM ePUB (SIGIL)</h2>
+                            </div>
+                            <p class="blue-panel-desc">
+                                A diagramação profissional de livros digitais requer precisão de código para evitar quebras em e-readers como Kindle e Apple Books. Ao contrário dos exportadores automáticos, edito nativamente no <strong>Sigil</strong> com **HTML5 semântico**, **CSS3 fluido para telas móveis** e scripts **JavaScript leves** para conteúdos interativos.
+                            </p>
+
+                            <div class="epub-highlights-grid">
+                                <div class="highlight-item">
+                                    <span class="h-icon">✓</span>
+                                    <div>
+                                        <strong>Código Limpo no Sigil</strong>
+                                        <p>Estrutura organizada sem lixo do Word/InDesign.</p>
+                                    </div>
+                                </div>
+
+                                <div class="highlight-item">
+                                    <span class="h-icon">✓</span>
+                                    <div>
+                                        <strong>CSS3 Responsivo (Reflowable)</strong>
+                                        <p>Adaptação a qualquer tamanho de tela e modo noturno.</p>
+                                    </div>
+                                </div>
+
+                                <div class="highlight-item">
+                                    <span class="h-icon">✓</span>
+                                    <div>
+                                        <strong>Validação ePubCheck 100%</strong>
+                                        <p>Aprovado sem avisos ou erros na Amazon e Apple.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Leitor de ePub Interativo (Tablet) -->
+                        <div class="blue-panel-reader-wrapper">
+                            <div class="epub-reader-tablet">
+                                <div class="tablet-header">
+                                    <div class="tablet-camera"></div>
+                                    <span class="tablet-brand">eReader Amostra</span>
+                                </div>
+                                <div class="tablet-screen">
+                                    <div id="epub-loading" class="reader-loading">
+                                        <div class="spinner"></div>
+                                        <p>Carregando amostra do eBook...</p>
+                                        <span class="reader-hint">(Amostra: amostra.epub)</span>
+                                    </div>
+                                    <div id="epub-viewer" class="reader-viewer"></div>
+                                    <div id="epub-error" class="reader-error" style="display: none;">
+                                        <i data-lucide="book-open" style="width: 48px; height: 48px; margin-bottom: 1rem; color: rgba(255,255,255,0.6);"></i>
+                                        <p><strong>Amostra Indisponível</strong></p>
+                                        <p style="font-size: 0.8rem; opacity: 0.8; margin-top: 0.5rem; text-align: center; max-width: 250px;">
+                                            Insira o arquivo <strong>amostra.epub</strong> na pasta principal (raiz) do seu projeto para ativá-lo automaticamente.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="tablet-controls">
+                                    <button id="epub-prev" class="reader-btn" aria-label="Página Anterior">
+                                        <i data-lucide="chevron-left"></i>
+                                    </button>
+                                    <div class="reader-meta">
+                                        <span id="epub-progress">Amostra</span>
+                                    </div>
+                                    <button id="epub-next" class="reader-btn" aria-label="Próxima Página">
+                                        <i data-lucide="chevron-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cases / Estudos de Caso -->
+        <section class="cases-section" id="cases">
+            <div class="container">
+                <div class="section-title-wrap text-center">
+                    <span class="pill-badge pill-purple">ESTUDOS DE CASO</span>
+                    <h2 class="main-heading">Como o Design Resolve Problemas</h2>
+                </div>
+
+                <div class="accordion-list">
+                    <!-- Case 1 -->
+                    <div class="acc-item">
+                        <button class="acc-trigger">
+                            <span class="acc-title">Case Calegari Malhas: Configurador Web &amp; E-commerce Têxtil</span>
+                            <span class="acc-icon">+</span>
+                        </button>
+                        <div class="acc-panel">
+                            <p><strong>Desafio:</strong> Atendimento manual demorado para orçamentos de uniformes com dúvidas frequentes sobre tecidos e técnicas de impressão (Sublimação vs DTF).</p>
+                            <p><strong>Solução:</strong> Criação do Configurador de Uniformes Interativo em 3 passos, permitindo ao cliente montar a peça, selecionar tecidos/tamanhos e enviar a arte em PDF/PNG.</p>
+                            <p><strong>Resultado:</strong> Automação dos orçamentos, redução da sobrecarga de atendimento e aumento nas vendas do e-commerce fabril.</p>
+                        </div>
+                    </div>
+
+                    <!-- Case 2 -->
+                    <div class="acc-item">
+                        <button class="acc-trigger">
+                            <span class="acc-title">Case Shein X: Coleção de Estampas para Moda Global</span>
+                            <span class="acc-icon">+</span>
+                        </button>
+                        <div class="acc-panel">
+                            <p><strong>Desafio:</strong> Desenvolver artes autorais que se destaquem no marketplace internacional da SheinX dentro dos exigentes padrões industriais.</p>
+                            <p><strong>Solução:</strong> Criação de estampas exclusivas streetwear/pop art com fechamento técnico e separação de cores perfeitos para estampagem em larga escala.</p>
+                            <p><strong>Resultado:</strong> Coleção lançada globalmente com 100% de aprovação técnica pela equipe da SheinX.</p>
+                        </div>
+                    </div>
+
+                    <!-- Case 3 -->
+                    <div class="acc-item">
+                        <button class="acc-trigger">
+                            <span class="acc-title">Case Estamparia Sacra: Coleção Fé &amp; Identidade</span>
+                            <span class="acc-icon">+</span>
+                        </button>
+                        <div class="acc-panel">
+                            <p><strong>Desafio:</strong> Superar a baixa qualidade de estampas religiosas genéricas no mercado têxtil nacional.</p>
+                            <p><strong>Solução:</strong> Ilustrações autorais sacras ricas em detalhes botânicos e iluminação artística para camisetas e peças religiosas.</p>
+                            <p><strong>Resultado:</strong> Aumento no valor percebido das camisetas e criação de uma linha de vestuário de alta margem de lucro para confecções.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Perguntas Frequentes -->
+        <section class="faq-section" id="faq">
+            <div class="container">
+                <div class="section-title-wrap text-center">
+                    <span class="pill-badge pill-blue">DUVIDAS</span>
+                    <h2 class="main-heading">Perguntas Frequentes</h2>
+                </div>
+
+                <div class="accordion-list">
+                    <div class="acc-item">
+                        <button class="acc-trigger">
+                            <span class="acc-title">Por que contratar a diagramação de eBooks no Sigil (ePub3)?</span>
+                            <span class="acc-icon">+</span>
+                        </button>
+                        <div class="acc-panel">
+                            <p>Exportações automáticas do Word ou InDesign geram códigos poluídos que travam ou desalinham o texto no Kindle e no iPad. No Sigil, escrevo o código HTML5 e CSS3 nativo para que a leitura seja fluida e adaptável em qualquer aplicativo de leitura.</p>
+                        </div>
+                    </div>
+
+                    <div class="acc-item">
+                        <button class="acc-trigger">
+                            <span class="acc-title">Você entrega os arquivos de estamparia prontos para a fábrica?</span>
+                            <span class="acc-icon">+</span>
+                        </button>
+                        <div class="acc-panel">
+                            <p>Sim! Entrego os arquivos em altíssima resolução (PSD, AI, PDF), configurados para o método de impressão desejado (Sublimação, DTF, Serigrafia) e com separação correta de cores.</p>
+                        </div>
+                    </div>
+
+                    <div class="acc-item">
+                        <button class="acc-trigger">
+                            <span class="acc-title">Qual é o prazo médio de entrega de um projeto?</span>
+                            <span class="acc-icon">+</span>
+                        </button>
+                        <div class="acc-panel">
+                            <p>O prazo varia de acordo com a complexidade: artes de estamparia levam de 3 a 7 dias; marcas e identidades visuais de 2 a 3 semanas; e websites/e-commerces de 3 a 5 semanas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Contato -->
+        <section class="contato-section" id="contato">
+            <div class="container">
+                <div class="contact-box">
+                    <div class="contact-left">
+                        <span class="pill-badge pill-purple">GABRIEL C.</span>
+                        <h2 class="contact-heading">VAMOS TRABALHAR JUNTOS?</h2>
+                        <p class="contact-text">
+                            Entre em contato direto pelo WhatsApp ou preencha o formulário para receber uma proposta personalizada para seu projeto.
+                        </p>
+
+                        <div class="direct-contacts">
+                            <a href="https://wa.me/5512997321701?text=Ol%C3%A1%20Gabriel!%20Gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener" class="contact-link-pill">
+                                <i data-lucide="phone"></i> (12) 99732 - 1701 ↗
+                            </a>
+                            <a href="mailto:gabrielcgoncalves28@gmail.com" class="contact-link-pill">
+                                <i data-lucide="mail"></i> gabrielcgoncalves28@gmail.com ↗
+                            </a>
+                        </div>
+                    </div>
+
+                    <form class="contact-form" id="contact-form" action="https://formspree.io/f/gabrielcgoncalves28@gmail.com" method="POST">
+                        <h3>Solicite um Orçamento</h3>
+
+                        <div class="field-group">
+                            <label for="name">Seu Nome / Empresa</label>
+                            <input type="text" id="name" name="name" placeholder="Ex: Gabriel Silva" required>
+                        </div>
+
+                        <div class="field-group">
+                            <label for="email">E-mail de Contato</label>
+                            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                        </div>
+
+                        <div class="field-group">
+                            <label for="service">Serviço Desejado</label>
+                            <select id="service" name="service" required>
+                                <option value="" disabled selected>Selecione um serviço</option>
+                                <option value="Estamparia Exclusiva">Estamparia Exclusiva / Têxtil</option>
+                                <option value="Web Design / E-commerce">Web Design / E-commerce</option>
+                                <option value="Identidade Visual / Branding">Identidade Visual &amp; Branding</option>
+                                <option value="Diagramacao eBook ePub Sigil">Diagramação de eBook ePub (Sigil)</option>
+                                <option value="Outro Projeto">Outro Projeto</option>
+                            </select>
+                        </div>
+
+                        <div class="field-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" name="message" rows="3" placeholder="Conte brevemente sobre o seu projeto..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-pill btn-blue btn-full">
+                            <span>Enviar Mensagem</span> ↗
+                        </button>
+
+                        <div class="form-feedback" id="form-feedback"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal para Detalhes de Projetos -->
+    <div class="modal-backdrop" id="modal-backdrop" aria-hidden="true">
+        <div class="modal-box" role="dialog" aria-modal="true">
+            <button class="modal-close-btn" id="modal-close-btn" aria-label="Fechar">✕</button>
+            <div id="modal-body-content"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p><strong>GABRIEL C. GONÇALVES</strong> — Designer Gráfico, Branding &amp; Web Design</p>
+            <p class="copy-sub">&copy; 2026 GCGDEV. Todos os direitos reservados. Hospedado no GitHub Pages.</p>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html>

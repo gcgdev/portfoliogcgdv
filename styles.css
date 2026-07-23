@@ -1,0 +1,1215 @@
+/* ==========================================================================
+   GABRIEL C. GONÇALVES — PORTFÓLIO DESIGN GRÁFICO (AUTÊNTICO & ELEGANTE)
+   Fiel ao Design System do Portfólio PDF (Off-White, Blue, Lavender & Black)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Variáveis & Design Tokens (Baseados no PDF)
+   -------------------------------------------------------------------------- */
+:root {
+    /* Cores Principais do Portfólio PDF */
+    --bg-main: #F4F3EF;          /* Off-white quente original das páginas */
+    --bg-card: #FFFFFF;          /* Branco puro para cards/polaroids */
+    --bg-panel: #EAE8E1;         /* Cinza claro para áreas de apoio */
+    
+    --brand-blue: #00A3FF;       /* Azul elétrico vibrante do cabeçalho e páginas 1, 3, 8, 9 */
+    --brand-purple: #C3B1E1;     /* Lilás/Lavanda das pílulas e rótulos páginas 4, 6, 8 */
+    --brand-dark-purple: #8C52FF;/* Roxo forte da página 11 */
+    --brand-black: #111111;      /* Preto profundo para tipografia e setas */
+    --brand-text-muted: #555555; /* Texto secundário */
+
+    --border-dark: #111111;
+    --border-light: rgba(0, 0, 0, 0.1);
+
+    /* Tipografia */
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+
+    /* Raio de Borda (Pílulas & Cards do PDF) */
+    --radius-pill: 50px;
+    --radius-card: 20px;
+    --radius-sm: 12px;
+
+    /* Sombra Fiel às Fotos do PDF */
+    --shadow-polaroid: 0 12px 30px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.14);
+}
+
+/* Modo Escuro Sofisticado (Preserva o Azul e Lavanda da Marca) */
+[data-theme="dark"] {
+    --bg-main: #121316;
+    --bg-card: #1C1E24;
+    --bg-panel: #262932;
+
+    --brand-black: #FFFFFF;
+    --brand-text-muted: #A0A5B5;
+
+    --border-dark: #FFFFFF;
+    --border-light: rgba(255, 255, 255, 0.12);
+
+    --shadow-polaroid: 0 12px 30px rgba(0, 0, 0, 0.4);
+    --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* --------------------------------------------------------------------------
+   2. Reset & Estilos Base
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    background-color: var(--bg-main);
+    color: var(--brand-black);
+    font-family: var(--font-body);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Top Banner Azul (Curva da capa do PDF) */
+.top-brand-banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 180px;
+    background: var(--brand-blue);
+    border-bottom-left-radius: 50% 30px;
+    border-bottom-right-radius: 50% 30px;
+    z-index: 1;
+}
+
+.container {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* --------------------------------------------------------------------------
+   3. Pílulas & Badges (Assinatura Visual do PDF)
+   -------------------------------------------------------------------------- */
+.pill-badge {
+    display: inline-block;
+    padding: 0.5rem 1.4rem;
+    border-radius: var(--radius-pill);
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 2px solid var(--border-dark);
+}
+
+.pill-purple {
+    background-color: var(--brand-purple);
+    color: #111111;
+}
+
+.pill-blue {
+    background-color: var(--brand-blue);
+    color: #FFFFFF;
+}
+
+.pill-white {
+    background-color: #FFFFFF;
+    color: #111111;
+}
+
+/* Botões Estilo Pílula */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 0.95rem;
+    padding: 0.85rem 1.8rem;
+    border-radius: var(--radius-pill);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    border: 2px solid var(--border-dark);
+}
+
+.btn-black {
+    background-color: var(--brand-black);
+    color: var(--bg-main);
+}
+
+.btn-black:hover {
+    transform: translateY(-2px);
+    background-color: var(--brand-blue);
+    color: #FFF;
+}
+
+.btn-blue {
+    background-color: var(--brand-blue);
+    color: #FFFFFF;
+}
+
+.btn-blue:hover {
+    transform: translateY(-2px);
+    background-color: var(--brand-black);
+    color: var(--bg-main);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--brand-black);
+}
+
+.btn-outline:hover {
+    background-color: var(--brand-purple);
+    color: #111;
+}
+
+.btn-lg {
+    padding: 1.1rem 2.4rem;
+    font-size: 1.05rem;
+}
+
+.btn-full {
+    width: 100%;
+}
+
+.arrow-icon, .arrow-big {
+    font-family: var(--font-heading);
+    font-weight: 900;
+}
+
+/* --------------------------------------------------------------------------
+   4. Navbar Cabeçalho (Melhorada para Modo Claro/Escuro sem Elementos Sumidos)
+   -------------------------------------------------------------------------- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 1.1rem 0;
+    background: rgba(244, 243, 239, 0.85); /* Fundo off-white com blur */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 2px solid var(--border-dark);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+[data-theme="dark"] .navbar {
+    background: rgba(18, 19, 22, 0.85); /* Fundo escuro com blur */
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand-logo {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-name {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 900;
+    color: var(--brand-black);
+}
+
+.logo-subtitle {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--brand-text-muted);
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+}
+
+.nav-link {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: var(--brand-black);
+    text-transform: uppercase;
+}
+
+.nav-link:hover {
+    color: var(--brand-blue);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.theme-toggle {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--bg-card);
+    border: 2px solid var(--border-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--brand-black);
+    transition: border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+}
+
+.theme-toggle:hover {
+    border-color: var(--brand-blue);
+    color: var(--brand-blue);
+}
+
+.mobile-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger-bar {
+    width: 25px;
+    height: 3px;
+    background: var(--brand-black);
+    transition: background-color 0.3s ease;
+}
+
+/* --------------------------------------------------------------------------
+   5. Hero Section
+   -------------------------------------------------------------------------- */
+.hero {
+    padding: 10rem 0 0 0; /* Espaço reduzido embaixo para a foto ficar colada na marquee */
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    align-items: flex-end;
+    gap: 2rem;
+}
+
+.hero-text-content {
+    padding-bottom: 4rem; /* Alinha o texto enquanto a foto encosta embaixo */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.hero-image-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.hero-photo {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.hero-header-badge {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.arrow-big {
+    font-size: 2.5rem;
+    color: var(--brand-black);
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -1px;
+    margin-bottom: 1.5rem;
+    color: var(--brand-black);
+}
+
+.hero-title-outlined {
+    color: transparent;
+    -webkit-text-stroke: 2px var(--brand-black);
+}
+
+.hero-tagline {
+    font-size: clamp(1.1rem, 2vw, 1.35rem);
+    color: var(--brand-text-muted);
+    max-width: 680px;
+    margin-bottom: 2.5rem;
+}
+
+.hero-cta-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+}
+
+/* --------------------------------------------------------------------------
+   6. Marquee Animada
+   -------------------------------------------------------------------------- */
+.marquee-container {
+    background-color: var(--brand-black);
+    color: var(--bg-main);
+    padding: 1.2rem 0;
+    overflow: hidden;
+    display: flex;
+    white-space: nowrap;
+    border-top: 2px solid var(--border-dark);
+    border-bottom: 2px solid var(--border-dark);
+}
+
+.marquee-content {
+    display: inline-flex;
+    animation: marquee 25s linear infinite;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+.marquee-content span {
+    padding: 0 1rem;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* --------------------------------------------------------------------------
+   7. Quem Sou Eu / Bio
+   -------------------------------------------------------------------------- */
+.bio-section {
+    padding: 5rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.eu-img-badge {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: var(--brand-blue);
+    color: #FFFFFF;
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 800;
+    padding: 0.5rem 1.2rem;
+    border-radius: var(--radius-pill);
+    border: 2px solid var(--border-dark);
+}
+
+.sobre-text-card {
+    background: var(--bg-card);
+    padding: 2.5rem;
+    border-radius: var(--radius-card);
+    border: 2px solid var(--border-dark);
+    box-shadow: var(--shadow-polaroid);
+}
+
+.section-arrow {
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.section-hero-heading {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 900;
+    line-height: 1;
+}
+
+.lead-text {
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin-bottom: 1.2rem;
+}
+
+.experience-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.chip {
+    padding: 0.8rem 1.2rem;
+    border-radius: var(--radius-sm);
+    background: var(--bg-panel);
+    border: 1px solid var(--border-dark);
+    display: flex;
+    flex-direction: column;
+    font-size: 0.85rem;
+}
+
+.chip strong {
+    font-family: var(--font-heading);
+    color: var(--brand-black);
+}
+
+.chip span {
+    color: var(--brand-text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   8. Serviços & Experiência
+   -------------------------------------------------------------------------- */
+.servicos-section {
+    padding: 6rem 0;
+    background-color: var(--bg-panel);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+@media (max-width: 1100px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.service-block {
+    background: var(--bg-card);
+    padding: 2.5rem 2rem;
+    border-radius: var(--radius-card);
+    border: 2px solid var(--border-dark);
+    box-shadow: var(--shadow-polaroid);
+    transition: transform 0.3s ease;
+}
+
+.service-block:hover {
+    transform: translateY(-8px);
+}
+
+.highlight-service {
+    border-color: var(--brand-blue);
+    background: linear-gradient(180deg, rgba(0, 163, 255, 0.08), var(--bg-card));
+}
+
+.service-number {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--brand-blue);
+    margin-bottom: 1rem;
+}
+
+.service-block h3 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.service-block p {
+    color: var(--brand-text-muted);
+    font-size: 0.95rem;
+}
+
+/* --------------------------------------------------------------------------
+   9. Showroom Portfólio (Cards Polaroid Melhorados para Imagens Reais)
+   -------------------------------------------------------------------------- */
+.portfolio-section {
+    padding: 6rem 0;
+}
+
+.carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: var(--bg-card);
+    border: 2px solid var(--border-dark);
+    color: var(--brand-black);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-polaroid);
+    transition: all 0.3s ease;
+}
+
+.carousel-btn:hover {
+    background: var(--brand-blue);
+    color: #FFFFFF;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev-btn { left: -25px; }
+.next-btn { right: -25px; }
+
+@media (max-width: 768px) {
+    .prev-btn { left: 5px; }
+    .next-btn { right: 5px; }
+}
+
+.portfolio-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1.5rem;
+    padding: 1rem 0 2rem 0;
+    scrollbar-width: none; /* Firefox hide scrollbar */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scroll-behavior: smooth;
+    width: 100%;
+}
+
+.portfolio-carousel::-webkit-scrollbar {
+    display: none; /* Chrome Safari hide scrollbar */
+}
+
+.carousel-img {
+    scroll-snap-align: center;
+    height: 340px; /* Altura controlada, similar ao tamanho visual que ocupava antes */
+    width: auto;   /* Largura se adapta para manter o formato original da imagem */
+    max-width: 85vw; /* Evita que estoure a tela em celulares */
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: var(--shadow-polaroid);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.carousel-img:hover {
+    transform: scale(1.02);
+}
+
+/* --------------------------------------------------------------------------
+   10. Seção Calegari Malhas (Web Design)
+   -------------------------------------------------------------------------- */
+.calegari-web-section {
+    display: block;
+    padding: 4rem 0;
+    background-color: var(--bg-main);
+    transition: transform 0.3s ease;
+}
+
+.calegari-web-section:hover {
+    transform: translateY(-5px);
+}
+
+.calegari-panel {
+    background-color: #121316; /* Fundo sempre escuro para destacar o premium */
+    color: #FFFFFF;
+    padding: 4rem 3rem;
+    border-radius: var(--radius-card);
+    border: 2px solid var(--border-dark);
+    box-shadow: var(--shadow-polaroid);
+}
+
+.calegari-panel-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.calegari-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.calegari-header h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900;
+    line-height: 1.1;
+}
+
+.calegari-desc {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+}
+
+.calegari-mock-browser {
+    background: #1C1E24;
+    border: 2px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    height: 100%;
+    min-height: 250px;
+}
+
+.browser-top {
+    background: rgba(255,255,255,0.05);
+    padding: 10px 15px;
+    display: flex;
+    gap: 6px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.browser-top i {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+}
+
+.browser-top i:nth-child(1) { background: #FF5F56; }
+.browser-top i:nth-child(2) { background: #FFBD2E; }
+.browser-top i:nth-child(3) { background: #27C93F; }
+
+.browser-body {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    background: #FFFFFF;
+}
+
+@media (max-width: 992px) {
+    .calegari-panel-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   11. Seção Diagramação ePub
+   -------------------------------------------------------------------------- */
+.epub-feature-section {
+    padding: 4rem 0;
+}
+
+.blue-panel {
+    background-color: var(--brand-blue);
+    color: #FFFFFF;
+    padding: 4rem 3rem;
+    border-radius: var(--radius-card);
+    border: 2px solid var(--border-dark);
+}
+
+.blue-panel-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.blue-panel-header h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 900;
+    line-height: 1.1;
+}
+
+.blue-panel-desc {
+    font-size: 1.1rem;
+    max-width: 850px;
+    margin-bottom: 2.5rem;
+    opacity: 0.95;
+}
+
+.epub-highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+.highlight-item {
+    background: rgba(255, 255, 255, 0.12);
+    padding: 1.5rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    display: flex;
+    gap: 1rem;
+}
+
+.h-icon {
+    font-size: 1.4rem;
+    font-weight: 900;
+}
+
+/* --------------------------------------------------------------------------
+   11. Accordions (Cases & FAQ)
+   -------------------------------------------------------------------------- */
+.cases-section, .faq-section {
+    padding: 5rem 0;
+}
+
+.accordion-list {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.acc-item {
+    background: var(--bg-card);
+    border: 2px solid var(--border-dark);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+}
+
+.acc-trigger {
+    width: 100%;
+    padding: 1.4rem 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--brand-black);
+}
+
+.acc-icon {
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+.acc-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    padding: 0 1.8rem;
+    color: var(--brand-text-muted);
+}
+
+.acc-item.active .acc-panel {
+    max-height: 400px;
+    padding: 0 1.8rem 1.5rem 1.8rem;
+}
+
+.acc-item.active .acc-icon {
+    transform: rotate(45deg);
+}
+
+/* --------------------------------------------------------------------------
+   12. Contato
+   -------------------------------------------------------------------------- */
+.contato-section {
+    padding: 6rem 0;
+}
+
+.contact-box {
+    background: var(--bg-card);
+    border: 2px solid var(--border-dark);
+    border-radius: var(--radius-card);
+    padding: 3.5rem;
+    box-shadow: var(--shadow-polaroid);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+}
+
+.contact-heading {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 900;
+    line-height: 1;
+    margin: 1rem 0;
+}
+
+.contact-text {
+    color: var(--brand-text-muted);
+    margin-bottom: 2rem;
+}
+
+.direct-contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-link-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.9rem 1.4rem;
+    border-radius: var(--radius-pill);
+    background: var(--bg-panel);
+    border: 2px solid var(--border-dark);
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 0.95rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.contact-form h3 {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 800;
+}
+
+.field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.field-group label {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 800;
+}
+
+.field-group input, .field-group select, .field-group textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    border: 2px solid var(--border-dark);
+    background: var(--bg-panel);
+    color: var(--brand-black);
+    outline: none;
+}
+
+/* Garante visibilidade das opções em todos os sistemas operacionais/temas */
+select option {
+    background-color: var(--bg-card);
+    color: var(--brand-black);
+}
+
+.form-feedback {
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* Modal */
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.modal-backdrop.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-box {
+    background: var(--bg-card);
+    border: 2px solid var(--border-dark);
+    border-radius: var(--radius-card);
+    padding: 2.5rem;
+    max-width: 700px;
+    width: 90%;
+    max-height: 85vh;
+    overflow-y: auto;
+    position: relative;
+    color: var(--brand-black);
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--brand-black);
+}
+
+/* Footer */
+.footer {
+    padding: 2.5rem 0;
+    background: var(--brand-black);
+    color: var(--bg-main);
+    text-align: center;
+}
+
+.copy-sub {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    margin-top: 0.4rem;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+    .contact-box {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 2rem;
+    }
+
+    .grid-2-col {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        top: 72px;
+        left: 0;
+        width: 100%;
+        background: var(--bg-main);
+        padding: 2rem;
+        border-bottom: 2px solid var(--border-dark);
+        transform: translateY(-150%);
+        transition: transform 0.3s ease;
+    }
+
+    .nav-menu.active {
+        transform: translateY(0);
+    }
+
+    .nav-list {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .mobile-toggle {
+        display: flex;
+    }
+}
+
+/* ==========================================================================
+   18. Leitor de ePub Interativo (Tablet)
+   ========================================================================== */
+.blue-panel-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+@media (max-width: 992px) {
+    .blue-panel-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+}
+
+.blue-panel-reader-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.epub-reader-tablet {
+    background: #1e1e24; /* Dark frame by default */
+    border: 10px solid #2e2e38;
+    border-radius: 28px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+[data-theme="dark"] .epub-reader-tablet {
+    border-color: #0d0e11;
+    background: #121316;
+}
+
+.tablet-header {
+    height: 30px;
+    background: #2e2e38;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .tablet-header {
+    background: #0d0e11;
+}
+
+.tablet-camera {
+    width: 7px;
+    height: 7px;
+    background: #111;
+    border-radius: 50%;
+    position: absolute;
+    left: 20px;
+}
+
+.tablet-brand {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.7rem;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.tablet-screen {
+    flex-grow: 1;
+    background: #FFFFFF;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+[data-theme="dark"] .tablet-screen {
+    background: #FAFAFA; /* Mantém fundo claro dentro da tela para leitura se for padrão do livro, mas controlaremos via epubjs */
+}
+
+.reader-loading, .reader-error {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: rgba(17, 17, 17, 0.95);
+    color: #FFF;
+    z-index: 10;
+    text-align: center;
+}
+
+.reader-hint {
+    font-size: 0.7rem;
+    opacity: 0.7;
+    margin-top: 0.5rem;
+}
+
+.spinner {
+    width: 36px;
+    height: 36px;
+    border: 4px solid rgba(255, 255, 255, 0.15);
+    border-left-color: var(--brand-blue);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.reader-viewer {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    background: #FAF9F6; /* Fundo suave estilo papel de leitura */
+}
+
+.reader-viewer iframe {
+    border: none !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.tablet-controls {
+    height: 50px;
+    background: #2e2e38;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.2rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .tablet-controls {
+    background: #0d0e11;
+}
+
+.reader-btn {
+    color: #FFFFFF;
+    opacity: 0.75;
+    transition: opacity 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.reader-btn:hover {
+    opacity: 1;
+    transform: scale(1.1);
+    background: var(--brand-blue);
+    color: #FFFFFF;
+}
+
+.reader-meta {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
