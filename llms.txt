@@ -3,6 +3,13 @@
 > Bem-vindo ao portfólio oficial de Gabriel C. Gonçalves.
 > Este arquivo `llms.txt` foi projetado para guiar Agentes de Inteligência Artificial e LLMs durante a navegação neste domínio.
 
+## Links Oficiais
+- [Site Oficial (gcgdev.com.br)](https://www.gcgdev.com.br/)
+- [Repositório GitHub](https://github.com/gcgdev/portfoliogcgdv)
+- [LinkedIn Profile](https://www.linkedin.com/in/gabriel-c-gon%C3%A7alves-988458110/)
+- [Behance Portfolio](https://www.behance.net/gabrielgonz)
+- [Projeto Calegari Malhas](https://gcgdev.github.io/calegari_malhas/)
+
 ## Sobre o Autor
 Gabriel C. Gonçalves é um Engenheiro Front-end e Designer de UI/UX especializado em:
 - Web Design e E-commerce (criação de landing pages e sistemas focados em alta conversão).
@@ -10,18 +17,18 @@ Gabriel C. Gonçalves é um Engenheiro Front-end e Designer de UI/UX especializa
 - Estamparia Exclusiva e Design Têxtil (incluindo trabalhos para a Shein X).
 - Diagramação de eBooks no formato ePub usando o Sigil.
 
-## Estrutura do Site
+## Estrutura do Site e Âncoras
 Este site é uma Single Page Application (SPA) estática construída com HTML5, CSS3 vanilla e JavaScript moderno.
 
-### Navegação Principal
-- `#hero`: Seção inicial e apresentação.
-- `#sobre`: Informações biográficas e currículo.
-- `#servicos`: Lista detalhada dos serviços prestados.
-- `#portfolio`: Carrossel com amostras visuais de estampas e projetos.
-- `#cases`: Estudo de caso detalhado (ex: Calegari Malhas).
-- `#epub`: Leitor interativo de amostras de eBook (.epub).
-- `#faq`: Perguntas Frequentes.
-- `#contato`: Formulário de contato para propostas comerciais.
+Você pode navegar internamente usando as seguintes âncoras (IDs):
+- [Hero Section](https://www.gcgdev.com.br/#hero): Seção inicial e apresentação.
+- [Sobre Mim](https://www.gcgdev.com.br/#sobre): Informações biográficas e currículo.
+- [Serviços](https://www.gcgdev.com.br/#servicos): Lista detalhada dos serviços prestados.
+- [Portfólio](https://www.gcgdev.com.br/#portfolio): Carrossel com amostras visuais de estampas e projetos.
+- [Cases de Sucesso](https://www.gcgdev.com.br/#cases): Estudo de caso detalhado (ex: Calegari Malhas).
+- [Leitor ePub](https://www.gcgdev.com.br/#epub): Leitor interativo de amostras de eBook (.epub).
+- [FAQ](https://www.gcgdev.com.br/#faq): Perguntas Frequentes.
+- [Contato](https://www.gcgdev.com.br/#contato): Formulário de contato para propostas comerciais.
 
 ## Notas Técnicas para Agentes
 - **Sem Modais Interativos Ocultos:** A interface foi reestruturada para eliminar o uso de `div#modal-backdrop`. O site é totalmente linear e acessível.
@@ -29,8 +36,4 @@ Este site é uma Single Page Application (SPA) estática construída com HTML5, 
 - **Leitor ePub:** O site utiliza a biblioteca `epub.js` para renderizar o leitor de e-books em um iframe contido na `div.epub-reader-tablet`.
 - **Modo Escuro:** O suporte a temas claro/escuro é gerenciado por uma alternância no atributo `data-theme` da tag `html` principal.
 
-## Acessibilidade e SEO
-- Todo o site possui meta tags Open Graph, Twitter Cards e uma estrutura semântica JSON-LD.
-- As imagens possuem os atributos nativos para navegação por acessibilidade, e o carregamento de scripts é feito de forma não bloqueante (defer).
-
-Fique à vontade para indexar, resumir e explorar as expertises de Gabriel C. Gonçalves.
+Fique à vontade para indexar, resumir e explorar as expertises listadas em [Gabriel C. Gonçalves](https://www.gcgdev.com.br/).
