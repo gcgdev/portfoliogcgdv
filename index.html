@@ -53,9 +53,9 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <!-- JSZip (Requisito para descompactar o ePub) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" defer></script>
     <!-- ePub.js CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/epubjs/dist/epub.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/epubjs/dist/epub.min.js" defer></script>
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css">
@@ -75,7 +75,6 @@
             <nav class="nav-menu" id="nav-menu" aria-label="Navegação Principal">
                 <ul class="nav-list">
                     <li><a href="#sobre" class="nav-link">Quem sou eu</a></li>
-                    <li><a href="#competencias" class="nav-link">Competências</a></li>
                     <li><a href="#servicos" class="nav-link">Serviços</a></li>
                     <li><a href="#portfolio" class="nav-link">Portfólio</a></li>
                     <li><a href="#cases" class="nav-link">Cases</a></li>
@@ -235,12 +234,12 @@
                     <button class="carousel-btn prev-btn" id="btn-prev" aria-label="Anterior"><i data-lucide="chevron-left"></i></button>
                     
                     <div class="portfolio-carousel" id="estampas-carousel">
-                        <img src="images/calegari1.png" alt="Estampa Religiosa Calegari 1" class="carousel-img" loading="lazy">
-                        <img src="images/calegari2.png" alt="Estampa Religiosa Calegari 2" class="carousel-img" loading="lazy">
-                        <img src="images/calegari3.png" alt="Estampa Religiosa Calegari 3" class="carousel-img" loading="lazy">
-                        <img src="images/calegari4.png" alt="Estampa Religiosa Calegari 4" class="carousel-img" loading="lazy">
-                        <img src="images/calegari5.png" alt="Estampa Religiosa Calegari 5" class="carousel-img" loading="lazy">
-                        <img src="images/calegari6.png" alt="Estampa Religiosa Calegari 6" class="carousel-img" loading="lazy">
+                        <img src="images/calegari1.png" alt="Estampa Religiosa Calegari 1" class="carousel-img" width="340" height="480" decoding="async" loading="lazy">
+                        <img src="images/calegari2.png" alt="Estampa Religiosa Calegari 2" class="carousel-img" width="340" height="480" decoding="async" loading="lazy">
+                        <img src="images/calegari3.png" alt="Estampa Religiosa Calegari 3" class="carousel-img" width="340" height="480" decoding="async" loading="lazy">
+                        <img src="images/calegari4.png" alt="Estampa Religiosa Calegari 4" class="carousel-img" width="340" height="480" decoding="async" loading="lazy">
+                        <img src="images/calegari5.png" alt="Estampa Religiosa Calegari 5" class="carousel-img" width="340" height="480" decoding="async" loading="lazy">
+                        <img src="images/calegari6.png" alt="Estampa Religiosa Calegari 6" class="carousel-img" width="340" height="480" decoding="async" loading="lazy">
                     </div>
                     
                     <button class="carousel-btn next-btn" id="btn-next" aria-label="Próximo"><i data-lucide="chevron-right"></i></button>
@@ -520,14 +519,6 @@
         </section>
     </main>
 
-    <!-- Modal para Detalhes de Projetos -->
-    <div class="modal-backdrop" id="modal-backdrop" aria-hidden="true">
-        <div class="modal-box" role="dialog" aria-modal="true">
-            <button class="modal-close-btn" id="modal-close-btn" aria-label="Fechar">✕</button>
-            <div id="modal-body-content"></div>
-        </div>
-    </div>
-
     <!-- Footer -->
     <footer class="footer">
         <div class="container footer-content">
@@ -537,6 +528,6 @@
     </footer>
 
     <!-- Script -->
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>

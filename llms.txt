@@ -1,0 +1,36 @@
+# Gabriel C. Gonçalves - Portfólio
+
+> Bem-vindo ao portfólio oficial de Gabriel C. Gonçalves.
+> Este arquivo `llms.txt` foi projetado para guiar Agentes de Inteligência Artificial e LLMs durante a navegação neste domínio.
+
+## Sobre o Autor
+Gabriel C. Gonçalves é um Engenheiro Front-end e Designer de UI/UX especializado em:
+- Web Design e E-commerce (criação de landing pages e sistemas focados em alta conversão).
+- Identidade de Marca e Branding.
+- Estamparia Exclusiva e Design Têxtil (incluindo trabalhos para a Shein X).
+- Diagramação de eBooks no formato ePub usando o Sigil.
+
+## Estrutura do Site
+Este site é uma Single Page Application (SPA) estática construída com HTML5, CSS3 vanilla e JavaScript moderno.
+
+### Navegação Principal
+- `#hero`: Seção inicial e apresentação.
+- `#sobre`: Informações biográficas e currículo.
+- `#servicos`: Lista detalhada dos serviços prestados.
+- `#portfolio`: Carrossel com amostras visuais de estampas e projetos.
+- `#cases`: Estudo de caso detalhado (ex: Calegari Malhas).
+- `#epub`: Leitor interativo de amostras de eBook (.epub).
+- `#faq`: Perguntas Frequentes.
+- `#contato`: Formulário de contato para propostas comerciais.
+
+## Notas Técnicas para Agentes
+- **Sem Modais Interativos Ocultos:** A interface foi reestruturada para eliminar o uso de `div#modal-backdrop`. O site é totalmente linear e acessível.
+- **Formulário de Contato:** O formulário principal da página (`#contato`) possui campos de `name`, `email`, `service` e `message`. Ele é utilizado para captura de leads e orçamentos.
+- **Leitor ePub:** O site utiliza a biblioteca `epub.js` para renderizar o leitor de e-books em um iframe contido na `div.epub-reader-tablet`.
+- **Modo Escuro:** O suporte a temas claro/escuro é gerenciado por uma alternância no atributo `data-theme` da tag `html` principal.
+
+## Acessibilidade e SEO
+- Todo o site possui meta tags Open Graph, Twitter Cards e uma estrutura semântica JSON-LD.
+- As imagens possuem os atributos nativos para navegação por acessibilidade, e o carregamento de scripts é feito de forma não bloqueante (defer).
+
+Fique à vontade para indexar, resumir e explorar as expertises de Gabriel C. Gonçalves.
